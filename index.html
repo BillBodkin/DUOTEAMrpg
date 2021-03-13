@@ -5,10 +5,24 @@
 			body {
 				margin: 0px;
 				padding: 0px;
-				background-color: black;
+				background-color: blue;
 			}
 		</style>
-		<script src="js/main.js"></script>
+		<script>
+			let game = null;
+		</script>
+		<script type="module">
+			import Game from "./js/Game.js";
+			
+			window.onload = function(){
+				game = new Game();
+			}
+			
+			window.onresize = function(){
+				if(game != null)
+					game.ResizeCanvas();
+			}
+		</script>
 	</head>
 	<body>
 		<canvas id="can"></canvas>
